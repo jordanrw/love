@@ -35,7 +35,10 @@
     self.manager = [CLLocationManager new];
     self.manager.delegate = self;
     [self.manager requestWhenInUseAuthorization];
-    self.manager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    
+    //change the desired specifity of the location
+    self.manager.desiredAccuracy = kCLLocationAccuracyBest;
+    //self.manager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
 }
 
 
@@ -60,11 +63,11 @@
     
     CLLocation *newLocation = [locations objectAtIndex:locations.count - 1];
     NSLog(@"%@", newLocation);
-
-    //CLLocation newLocation.coordinate.latitude
     
-    NSString *latitude = [[NSString alloc] initWithFormat:@"%g°", newLocation.coordinate.latitude];
-    NSString *longitude = [[NSString alloc]initWithFormat:@"%g°", newLocation.coordinate.longitude];
+    NSString *longitude = [[NSString alloc]initWithFormat:@"%f", newLocation.coordinate.longitude];
+    NSString *latitude = [[NSString alloc] initWithFormat:@"%f", newLocation.coordinate.latitude];
+
+    
     [self.longLabel setText:longitude];
     [self.latLabel setText:latitude];
     
