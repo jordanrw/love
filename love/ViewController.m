@@ -20,7 +20,7 @@
 
 @end
 
-
+//test to push
 
 @implementation ViewController
 
@@ -61,7 +61,7 @@
     CLLocation *newLocation = [locations objectAtIndex:locations.count - 1];
     NSLog(@"%@", newLocation);
 
-    CLLocation newLocation.coordinate.latitude
+    //CLLocation newLocation.coordinate.latitude
     
     NSString *latitude = [[NSString alloc] initWithFormat:@"%g°", newLocation.coordinate.latitude];
     NSString *longitude = [[NSString alloc]initWithFormat:@"%g°", newLocation.coordinate.longitude];
