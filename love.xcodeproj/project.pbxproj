@@ -14,6 +14,7 @@
 		172E9E6A1A85FB04005EB42E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172E9E691A85FB04005EB42E /* Images.xcassets */; };
 		172E9E6D1A85FB04005EB42E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 172E9E6B1A85FB04005EB42E /* LaunchScreen.xib */; };
 		172E9E791A85FB04005EB42E /* loveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 172E9E781A85FB04005EB42E /* loveTests.m */; };
+		3F58E31C1A86E9BF00BC6454 /* stop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F58E31B1A86E9BF00BC6454 /* stop.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		172E9E721A85FB04005EB42E /* loveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = loveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		172E9E771A85FB04005EB42E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		172E9E781A85FB04005EB42E /* loveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = loveTests.m; sourceTree = "<group>"; };
+		3F58E31B1A86E9BF00BC6454 /* stop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stop.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				172E9E631A85FB04005EB42E /* ViewController.h */,
 				172E9E641A85FB04005EB42E /* ViewController.m */,
 				172E9E661A85FB04005EB42E /* Main.storyboard */,
+				3F58E31B1A86E9BF00BC6454 /* stop.jpg */,
 				172E9E691A85FB04005EB42E /* Images.xcassets */,
 				172E9E6B1A85FB04005EB42E /* LaunchScreen.xib */,
 				172E9E5C1A85FB03005EB42E /* Supporting Files */,
@@ -204,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F58E31C1A86E9BF00BC6454 /* stop.jpg in Resources */,
 				172E9E681A85FB04005EB42E /* Main.storyboard in Resources */,
 				172E9E6D1A85FB04005EB42E /* LaunchScreen.xib in Resources */,
 				172E9E6A1A85FB04005EB42E /* Images.xcassets in Resources */,
@@ -417,6 +421,7 @@
 				172E9E7E1A85FB04005EB42E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		172E9E7F1A85FB04005EB42E /* Build configuration list for PBXNativeTarget "loveTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				172E9E811A85FB04005EB42E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
