@@ -21,6 +21,8 @@
 		3F58E3261A86ED9800BC6454 /* stop1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F58E3251A86ED9800BC6454 /* stop1x.png */; };
 		3F58E3281A86EE2B00BC6454 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F58E3271A86EE2B00BC6454 /* plus.png */; };
 		3F58E32A1A86EE3100BC6454 /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F58E3291A86EE3100BC6454 /* nav.png */; };
+		727C5FAA1A873E2400B4843A /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727C5FA91A873E2400B4843A /* Spotify.framework */; };
+		727C5FAC1A873E6400B4843A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727C5FAB1A873E6400B4843A /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		3F58E3251A86ED9800BC6454 /* stop1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop1x.png; sourceTree = "<group>"; };
 		3F58E3271A86EE2B00BC6454 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		3F58E3291A86EE3100BC6454 /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav.png; sourceTree = "<group>"; };
+		727C5FA91A873E2400B4843A /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		727C5FAB1A873E6400B4843A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727C5FAC1A873E6400B4843A /* AVFoundation.framework in Frameworks */,
+				727C5FAA1A873E2400B4843A /* Spotify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +83,7 @@
 		172E9E501A85FB03005EB42E = {
 			isa = PBXGroup;
 			children = (
+				727C5FA81A873E0E00B4843A /* Frameworks */,
 				172E9E5B1A85FB03005EB42E /* love */,
 				172E9E751A85FB04005EB42E /* loveTests */,
 				172E9E5A1A85FB03005EB42E /* Products */,
@@ -146,6 +153,15 @@
 				3F58E3251A86ED9800BC6454 /* stop1x.png */,
 			);
 			name = assets;
+			sourceTree = "<group>";
+		};
+		727C5FA81A873E0E00B4843A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				727C5FAB1A873E6400B4843A /* AVFoundation.framework */,
+				727C5FA91A873E2400B4843A /* Spotify.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,8 +403,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = love/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -400,8 +421,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = love/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
