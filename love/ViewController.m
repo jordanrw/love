@@ -25,7 +25,12 @@
 @property (nonatomic, strong) SPTSession *session;
 @property (nonatomic, strong) SPTAudioStreamingController *player;
 
+//City_ST
 @property (strong, nonatomic) NSString *address;
+
+@property BOOL isPlaying;
+@property (weak, nonatomic) IBOutlet UIButton *playStop;
+
 
 @end
 
@@ -40,10 +45,6 @@
 
 -(BOOL)prefersStatusBarHidden{
     return YES;
-}
-
--(IBAction)playPause:(id)sender {
-    [self.player setIsPlaying:!self.player.isPlaying callback:nil];
 }
 
 #pragma mark - Location
@@ -98,6 +99,29 @@
     [self fetchFeedWith:url];
 }
 
+
+-(IBAction)playPause:(UIButton *)sender {
+    
+    [self.player setIsPlaying:!self.player.isPlaying callback:nil];
+    
+    if (_isPlaying == YES) {
+        //stop music &
+        //set it to the play icon
+        UIImage *stop = [UIImage imageNamed:@"play.png"];
+        [self.playStop setImage:stop forState:UIControlStateNormal];
+        _isPlaying = NO;
+        
+    }
+    else {
+        //start music
+        //set it to the stop icon
+        UIImage *play = [UIImage imageNamed:@"stop.png"];
+        [self.playStop setImage:play forState: UIControlStateNormal];
+        _isPlaying = YES;
+    }
+}
+
+
 #pragma mark - Getting From the Server (JSON)
 - (void)fetchFeedWith:(NSString *)inputURL {
     
@@ -132,6 +156,7 @@
 }
 
 
+
 -(void)updateUI {
     if (self.player.currentTrackMetadata == nil) {
         self.song.text = @"Nothing Playing";
@@ -147,7 +172,7 @@
 
 -(void)updateCoverArt {
     if (self.player.currentTrackMetadata == nil) {
-        //self.coverView.image = nil;
+        self.albumCover.image = nil;
         return;
     }
     
@@ -160,7 +185,7 @@
                       NSURL *imageURL = album.largestCover.imageURL;
                       if (imageURL == nil) {
                           NSLog(@"Album %@ doesn't have any images!", album);
-                          //self.coverView.image = nil;
+                          self.albumCover.image = nil;
                           return;
                       }
                       
@@ -177,7 +202,7 @@
                           // …and back to the main queue to display the image.
                           dispatch_async(dispatch_get_main_queue(), ^{
                               //[self.spinner stopAnimating];
-                              //self.coverView.image = image;
+                              self.albumCover.image = image;
                               if (image == nil) {
                                   NSLog(@"Couldn't load cover image with error: %@", error);
                               }
@@ -202,7 +227,10 @@
             return;
         }
         
-        [SPTRequest requestItemAtURI:[NSURL URLWithString:@"spotify:album:2gXTTQ713nCELgPOS0qWyt"]
+        NSString *switchfoot = @"spotify:album:1GyzM6vN5fWs2RDCLmJTIz";
+        NSString *elly = @"spotify:album:2gXTTQ713nCELgPOS0qWyt";
+        
+        [SPTRequest requestItemAtURI:[NSURL URLWithString:switchfoot]
                          withSession:session
                             callback:^(NSError *error, id object) {
                                 
@@ -212,6 +240,7 @@
                                 }
                                 
                                 [self.player playTrackProvider:(id <SPTTrackProvider>)object callback:nil];
+                                _isPlaying = YES;
                                 
                             }];
     }];
