@@ -110,13 +110,17 @@
 
 - (void) extractData: (NSData*)data  {
     
-    NSArray *songArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-    
+    //NSArray *songArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+
     
     NSLog(@"got data");
-    NSLog(@"%@", songArray);
-//    self.currentSong.songID = [songArray objectAtIndex:1];
-//    NSLog(@"songID: %@", self.currentSong.songID);
+    NSLog(@"%@", dict);
+    self.currentSong.songID = [dict objectForKey:@"SongID"];
+    NSLog(@"songID: %@", self.currentSong.songID);
+    
+    NSArray *ray = @[@"Apple", @"Google", @"Facebook"];
+    NSLog(@"this is an array: %@", ray);
     
 }
 
