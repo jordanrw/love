@@ -31,6 +31,10 @@
 		172E9EEC1A87355D005EB42E /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 172E9EEB1A87355D005EB42E /* play.png */; };
 		172E9EEF1A87414F005EB42E /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 172E9EEE1A87414F005EB42E /* Song.m */; };
 		172E9EF71A8753E9005EB42E /* wally.png in Resources */ = {isa = PBXBuildFile; fileRef = 172E9EF61A8753E9005EB42E /* wally.png */; };
+		172E9EF91A876B02005EB42E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E9EF81A876B02005EB42E /* Security.framework */; };
+		172E9EFB1A876B09005EB42E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E9EFA1A876B09005EB42E /* Foundation.framework */; };
+		172E9EFD1A876B11005EB42E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E9EFC1A876B11005EB42E /* CoreGraphics.framework */; };
+		172E9EFF1A876B1E005EB42E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E9EFE1A876B1E005EB42E /* UIKit.framework */; };
 		3F58E31E1A86EAE200BC6454 /* cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F58E31D1A86EAE200BC6454 /* cover.png */; };
 		3F58E3261A86ED9800BC6454 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F58E3251A86ED9800BC6454 /* stop.png */; };
 		3F58E3281A86EE2B00BC6454 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F58E3271A86EE2B00BC6454 /* plus.png */; };
@@ -83,6 +87,10 @@
 		172E9EED1A87414F005EB42E /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		172E9EEE1A87414F005EB42E /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		172E9EF61A8753E9005EB42E /* wally.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wally.png; sourceTree = "<group>"; };
+		172E9EF81A876B02005EB42E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		172E9EFA1A876B09005EB42E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		172E9EFC1A876B11005EB42E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		172E9EFE1A876B1E005EB42E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F58E31D1A86EAE200BC6454 /* cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover.png; sourceTree = "<group>"; };
 		3F58E3251A86ED9800BC6454 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		3F58E3271A86EE2B00BC6454 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
@@ -96,6 +104,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172E9EFF1A876B1E005EB42E /* UIKit.framework in Frameworks */,
+				172E9EFD1A876B11005EB42E /* CoreGraphics.framework in Frameworks */,
+				172E9EFB1A876B09005EB42E /* Foundation.framework in Frameworks */,
+				172E9EF91A876B02005EB42E /* Security.framework in Frameworks */,
 				727C5FAC1A873E6400B4843A /* AVFoundation.framework in Frameworks */,
 				727C5FAA1A873E2400B4843A /* Spotify.framework in Frameworks */,
 			);
@@ -214,6 +226,10 @@
 		727C5FA81A873E0E00B4843A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				172E9EFE1A876B1E005EB42E /* UIKit.framework */,
+				172E9EFC1A876B11005EB42E /* CoreGraphics.framework */,
+				172E9EFA1A876B09005EB42E /* Foundation.framework */,
+				172E9EF81A876B02005EB42E /* Security.framework */,
 				727C5FAB1A873E6400B4843A /* AVFoundation.framework */,
 				727C5FA91A873E2400B4843A /* Spotify.framework */,
 			);

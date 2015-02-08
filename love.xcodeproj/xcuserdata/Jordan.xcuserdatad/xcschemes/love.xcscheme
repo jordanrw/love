@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "172E9E581A85FB03005EB42E"
-               BuildableName = "love.app"
+               BuildableName = "Mob.app"
                BlueprintName = "love"
                ReferencedContainer = "container:love.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "172E9E581A85FB03005EB42E"
-            BuildableName = "love.app"
+            BuildableName = "Mob.app"
             BlueprintName = "love"
             ReferencedContainer = "container:love.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "172E9E581A85FB03005EB42E"
-            BuildableName = "love.app"
+            BuildableName = "Mob.app"
             BlueprintName = "love"
             ReferencedContainer = "container:love.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "172E9E581A85FB03005EB42E"
-            BuildableName = "love.app"
+            BuildableName = "Mob.app"
             BlueprintName = "love"
             ReferencedContainer = "container:love.xcodeproj">
          </BuildableReference>
