@@ -238,7 +238,7 @@
 }
 
 - (IBAction)buttonTap:(UIButton *)sender {
-    [self updateUI];
+    
 }
 
 
