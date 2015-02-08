@@ -20,36 +20,54 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.30000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="syk-wn-hdF">
-                                <rect key="frame" x="71" y="402" width="235" height="2"/>
+                                <rect key="frame" x="71" y="414" width="235" height="2"/>
                                 <color key="backgroundColor" red="0.1372500062" green="0.1372500062" blue="0.1372500062" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1372500062" green="0.1372500062" blue="0.1372500062" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="progressTintColor" red="0.1372500062" green="0.1372500062" blue="0.1372500062" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.82353001830000006" green="0.82353001830000006" blue="0.82353001830000006" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:22" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJd-HP-Cbx">
-                                <rect key="frame" x="319" y="392" width="42" height="21"/>
+                                <rect key="frame" x="319" y="404" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:42" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMM-gh-7JJ">
-                                <rect key="frame" x="16" y="392" width="42" height="21"/>
+                                <rect key="frame" x="16" y="404" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Burn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duk-Km-ZJX">
-                                <rect key="frame" x="17" y="437" width="344" height="33"/>
+                                <rect key="frame" x="16" y="454" width="343" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIB-ri-FI7">
-                                <rect key="frame" x="166" y="597" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdQ-Bh-n99">
+                                <rect key="frame" x="154" y="567" width="65" height="65"/>
+                                <state key="normal" image="stop1x.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvV-d1-hh3">
+                                <rect key="frame" x="290" y="592" width="15" height="15"/>
+                                <state key="normal" image="plus.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIP-Ne-HFc">
+                                <rect key="frame" x="70" y="592" width="15" height="15"/>
+                                <state key="normal" image="nav.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ellie Goulding" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lx-5S-OLg">
+                                <rect key="frame" x="16" y="495" width="343" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -63,5 +81,8 @@
     </scenes>
     <resources>
         <image name="cover.png" width="1200" height="1200"/>
+        <image name="nav.png" width="33" height="28"/>
+        <image name="plus.png" width="33" height="32"/>
+        <image name="stop1x.png" width="133" height="133"/>
     </resources>
 </document>
