@@ -39,12 +39,6 @@
     return YES;
 }
 
-#pragma mark - Getting From the Server
-
-#pragma mark - Interacting with the music
-
-
-
 #pragma mark - Location
 - (void) setUpLocation {
  
@@ -92,11 +86,32 @@
      }];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
+#pragma mark - Getting From the Server (JSON)
+- (void)fetchFeedWith:(NSString *)inputURL {
     
-    NSLog(@"hit2");
+    __weak ViewController *weakSelf = self;
+    
+    NSURL *URL = [NSURL URLWithString:inputURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    [NSURLConnection sendAsynchronousRequest: request queue: [NSOperationQueue mainQueue] completionHandler:
+     ^(NSURLResponse* response, NSData* data, NSError* connectionError){
+         NSLog(@"data is kinda here");
+         //the same as calling self, but its a safety to make sure self hasn't been set to nil
+         //since this is inside of a 'block'
+         [weakSelf extractData:data];
+     }];
+}
+
+- (void) extractData: (NSData*) someData  {
+    
+    NSArray *song = [NSJSONSerialization JSONObjectWithData:someData options:0 error:nil];
+    NSLog(@"The data is downloaded");
     
 }
+
+
+#pragma mark - Interacting with the music
 
 
 #pragma mark - memory warning
