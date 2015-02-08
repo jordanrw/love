@@ -24,6 +24,10 @@
 
 @property (strong, nonatomic) NSString *address;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *playStop;
+@property BOOL playing;
+
 @end
 
 //test to push
@@ -36,6 +40,7 @@
     
     //initialize the current song
     self.currentSong = [[Song alloc]init];
+    _playing = YES;
 }
 
 -(BOOL)prefersStatusBarHidden{
@@ -123,6 +128,24 @@
 
 
 #pragma mark - Interacting with the music
+- (IBAction)playStop:(UIButton *)sender {
+    
+    if (_playing == YES) {
+        //stop music &
+        //set it to the play icon
+        UIImage *stop = [UIImage imageNamed:@"play.png"];
+        [self.playStop setImage:stop forState:UIControlStateNormal];
+        _playing = NO;
+    }
+    else {
+        //start music
+        //set it to the stop icon
+        UIImage *play = [UIImage imageNamed:@"stop.png"];
+        [self.playStop setImage:play forState: UIControlStateNormal];
+        _playing = YES;
+    }
+}
+
 
 
 #pragma mark - memory warning

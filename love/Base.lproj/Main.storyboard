@@ -148,6 +148,9 @@
                                 <state key="normal" image="stop1x.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="playStop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ocC-Sm-dDC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvV-d1-hh3" userLabel="add">
                                 <rect key="frame" x="281" y="572" width="55" height="55"/>
@@ -185,6 +188,7 @@
                         <outlet property="artist" destination="4lx-5S-OLg" id="x1r-wo-zMl"/>
                         <outlet property="currentTime" destination="kMM-gh-7JJ" id="JHU-Al-fZ3"/>
                         <outlet property="endTime" destination="oJd-HP-Cbx" id="Qsx-oR-JgK"/>
+                        <outlet property="playStop" destination="HdQ-Bh-n99" id="1eU-Vs-40e"/>
                         <outlet property="progressView" destination="syk-wn-hdF" id="Amx-eP-P1Y"/>
                         <outlet property="song" destination="Duk-Km-ZJX" id="WCI-aw-95O"/>
                     </connections>
