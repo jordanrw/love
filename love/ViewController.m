@@ -14,8 +14,13 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) CLLocationManager *manager;
-@property (weak, nonatomic) IBOutlet UILabel *longLabel;
-@property (weak, nonatomic) IBOutlet UILabel *latLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *albumCover;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UILabel *currentTime;
+@property (weak, nonatomic) IBOutlet UILabel *endTime;
+@property (weak, nonatomic) IBOutlet UILabel *song;
+@property (weak, nonatomic) IBOutlet UILabel *artist;
 
 
 @end
@@ -68,8 +73,8 @@
     NSString *latitude = [[NSString alloc] initWithFormat:@"%f", newLocation.coordinate.latitude];
 
     
-    [self.longLabel setText:longitude];
-    [self.latLabel setText:latitude];
+//    [self.longLabel setText:longitude];
+//    [self.latLabel setText:latitude];
     
 }
 

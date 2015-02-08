@@ -73,6 +73,14 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="albumCover" destination="DO2-s9-1X7" id="xLd-Sz-oAn"/>
+                        <outlet property="artist" destination="4lx-5S-OLg" id="x1r-wo-zMl"/>
+                        <outlet property="currentTime" destination="kMM-gh-7JJ" id="JHU-Al-fZ3"/>
+                        <outlet property="endTime" destination="oJd-HP-Cbx" id="Qsx-oR-JgK"/>
+                        <outlet property="progressView" destination="syk-wn-hdF" id="Amx-eP-P1Y"/>
+                        <outlet property="song" destination="Duk-Km-ZJX" id="WCI-aw-95O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
