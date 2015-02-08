@@ -83,13 +83,13 @@
          CLPlacemark *placemark = [placemarks objectAtIndex:0];
 
          //String to hold address
-         NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-        self.address = locatedAt;
+        NSString *city = placemark.locality;
+        NSString *state = placemark.administrativeArea;
+        self.address = [[NSString alloc]initWithFormat:@"%@_%@", city, state];
         
          //Print the location to console
         NSLog(@"I am currently at %@",self.address);
      }];
-    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
