@@ -34,7 +34,17 @@
     [self setUpLocation];
 }
 
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
 
+#pragma mark - Getting From the Server
+
+#pragma mark - Interacting with the music
+
+
+
+#pragma mark - Location
 - (void) setUpLocation {
  
     self.manager = [CLLocationManager new];
@@ -49,12 +59,6 @@
 
 - (void)startLocation {
     [self.manager startUpdatingLocation];
-}
-
-
-- (IBAction)click:(UIButton *)sender {
-    [self startLocation];
-    
 }
 
 
@@ -84,6 +88,8 @@
     
 }
 
+
+#pragma mark - memory warning
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
