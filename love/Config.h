@@ -20,9 +20,12 @@
 
 
 
- #define kClientId "e6695c6d22214e0f832006889566df9c"
- #define kCallbackURL "locationbasedmusic:/callback"
- #define kTokenSwapServiceURL "https://salty-basin-8244.herokuapp.com/swap"
- #define kTokenRefreshServiceURL "https://salty-basin-8244.herokuapp.com/refresh"
+ #define kClientId "04db443e03cb453f9a19523f59ed6cb3"
+ #define kCallbackURL "twobeardsandfro://"
+ //#define kTokenSwapServiceURL "https://salty-basin-8244.herokuapp.com/swap"
+ //#define kTokenRefreshServiceURL "https://salty-basin-8244.herokuapp.com/refresh"
+#define kTokenSwapServiceURL ""
+#define kTokenRefreshServiceURL ""
+
 
 #endif

@@ -27,7 +27,7 @@
 			<string>com.TwoBeardsAndFro.love</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>locationbasedmusic</string>
+				<string>twobeardsandfro</string>
 			</array>
 		</dict>
 	</array>
