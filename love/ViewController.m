@@ -84,6 +84,11 @@
          //Print the location to console
         NSLog(@"I am currently at %@",self.address);
      }];
+    
+    //TODO
+    //call the fetchFeed, not sure if this should be done?
+    NSString *url = [[NSString alloc]initWithFormat:@"http://104.236.79.116:8000/api"];
+    [self fetchFeedWith:url];
 }
 
 #pragma mark - Getting From the Server (JSON)
@@ -103,10 +108,15 @@
      }];
 }
 
-- (void) extractData: (NSData*) someData  {
+- (void) extractData: (NSData*)data  {
     
-    NSArray *song = [NSJSONSerialization JSONObjectWithData:someData options:0 error:nil];
-    NSLog(@"The data is downloaded");
+    NSArray *songArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    
+    NSLog(@"got data");
+    NSLog(@"%@", songArray);
+//    self.currentSong.songID = [songArray objectAtIndex:1];
+//    NSLog(@"songID: %@", self.currentSong.songID);
     
 }
 
