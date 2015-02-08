@@ -15,12 +15,12 @@
 
 @property (strong, nonatomic) CLLocationManager *manager;
 
-@property (weak, nonatomic) IBOutlet UIImageView *albumCover;
-@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
-@property (weak, nonatomic) IBOutlet UILabel *currentTime;
-@property (weak, nonatomic) IBOutlet UILabel *endTime;
-@property (weak, nonatomic) IBOutlet UILabel *song;
-@property (weak, nonatomic) IBOutlet UILabel *artist;
+@property (strong, nonatomic) IBOutlet UIImageView *albumCover;
+@property (strong, nonatomic) IBOutlet UIProgressView *progressView;
+@property (strong, nonatomic) IBOutlet UILabel *currentTime;
+@property (strong, nonatomic) IBOutlet UILabel *endTime;
+@property (strong, nonatomic) IBOutlet UILabel *song;
+@property (strong, nonatomic) IBOutlet UILabel *artist;
 
 
 @end
