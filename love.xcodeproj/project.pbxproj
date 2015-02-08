@@ -94,10 +94,7 @@
 				172E9E631A85FB04005EB42E /* ViewController.h */,
 				172E9E641A85FB04005EB42E /* ViewController.m */,
 				172E9E661A85FB04005EB42E /* Main.storyboard */,
-				3F58E3271A86EE2B00BC6454 /* plus.png */,
-				3F58E3291A86EE3100BC6454 /* nav.png */,
-				3F58E31D1A86EAE200BC6454 /* cover.png */,
-				3F58E3251A86ED9800BC6454 /* stop1x.png */,
+				3F58E32B1A86EFA400BC6454 /* assets */,
 				172E9E691A85FB04005EB42E /* Images.xcassets */,
 				172E9E6B1A85FB04005EB42E /* LaunchScreen.xib */,
 				172E9E5C1A85FB03005EB42E /* Supporting Files */,
@@ -129,6 +126,17 @@
 				172E9E771A85FB04005EB42E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F58E32B1A86EFA400BC6454 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				3F58E3271A86EE2B00BC6454 /* plus.png */,
+				3F58E3291A86EE3100BC6454 /* nav.png */,
+				3F58E31D1A86EAE200BC6454 /* cover.png */,
+				3F58E3251A86ED9800BC6454 /* stop1x.png */,
+			);
+			name = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
