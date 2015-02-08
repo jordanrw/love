@@ -11,11 +11,11 @@
 //@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
 
-@interface ViewController () <SPTAudioStreamingPlaybackDelegate>
+@interface ViewController () <SPTAudioStreamingDelegate>
 
 @property (strong, nonatomic) CLLocationManager *manager;
 
-@property (strong, nonatomic) IBOutlet UIImageView *albumCover;
+@property (weak, nonatomic) IBOutlet UIImageView *albumCover;
 @property (strong, nonatomic) IBOutlet UIProgressView *progressView;
 @property (strong, nonatomic) IBOutlet UILabel *currentTime;
 @property (strong, nonatomic) IBOutlet UILabel *endTime;
@@ -134,9 +134,89 @@
 #pragma mark - Interacting with the music
 - (void)handleNewSession:(SPTSession *)session {
     
+    self.session = session;
+    
+    if (self.player == nil) {
+        self.player = [[SPTAudioStreamingController alloc]initWithClientId:@kClientId];
+        self.player.playbackDelegate = self;
+    }
+    
+    [self.player loginWithSession:session callback:^(NSError *error) {
+        if (error != nil) {
+            NSLog(@"****Enabling playback got an error: %@", error);
+            return;
+        }
+        
+        //where to change it
+        [SPTRequest requestItemAtURI:[NSURL URLWithString:@"spotify:album:4L1HDyfdGIkACuygktO7T7"] withSession:session callback:^(NSError *error, id object) {
+            if (error != nil) {
+                NSLog(@"*****Album lookup got error: %@", error);
+                return;
+            }
+            
+            [self.player playTrackProvider:(id<SPTTrackProvider>)object callback:nil];
+        }];
+    }];
+}
 
+
+
+- (void)updateAlbumArt {
+//    if (self.player.currentTrackMetadata == nil) {
+//        NSLog(@"is this being called?");
+//
+//        self.albumCover.image = nil;
+//        return;
+//    }
+    
+    [SPTAlbum albumWithURI:[NSURL URLWithString:[self.player.currentTrackMetadata valueForKey:SPTAudioStreamingMetadataAlbumURI]] session:self.session callback:^(NSError *error, SPTAlbum *album) {
+        NSURL *imageURL = album.largestCover.imageURL;
+        if (imageURL == nil) {
+            NSLog(@"no image for this album: %@", album);
+            self.albumCover.image = nil;
+            return;
+        }
+        
+        //pop over to a background queue to get the image for cover
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSError *error = nil;
+            UIImage *image = nil;
+            NSData *imageData = [NSData dataWithContentsOfURL:imageURL options:0 error:&error];
+            
+            if (imageData != nil) {
+                image = [UIImage imageWithData:imageData];
+            }
+            
+            //back to main queue to display the image
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.albumCover.image = image;
+                if (image == nil) {
+                    NSLog(@"couldn't load album cover: %@", error);
+                }
+            });
+        });
+    }];
+}
+
+
+- (void) audioStreaming:(SPTAudioStreamingController *)audioStreaming didChangeToTrack:(NSDictionary *)trackMetadata {
+    
+    NSLog(@"META DATA YO YO YO!");
+    [self updateUI];
+}
+
+
+- (void) updateUI {
+    
+    if (self.player.currentTrackMetadata == nil) {
+        NSLog(@"NO META DATA!");
+    }
+    else {
+        NSLog(@"data");
+    }
     
 }
+
 
 - (IBAction)playStop:(UIButton *)sender {
     
@@ -156,6 +236,11 @@
         _playing = YES;
     }
 }
+
+- (IBAction)buttonTap:(UIButton *)sender {
+    [self updateUI];
+}
+
 
 
 
