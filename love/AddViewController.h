@@ -8,6 +8,6 @@
 
 #import "ViewController.h"
 
-@interface AddViewController : ViewController <UITableViewDelegate, UITableViewDataSource>
+@interface AddViewController : ViewController <UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate>
 
 @end

@@ -11,7 +11,7 @@
 @interface AddViewController ()
 
 @property (strong, nonatomic) NSArray *array;
-
+@property (strong, nonatomic) NSArray *searchResults;
 
 @end
 
@@ -20,8 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.array = [[NSArray alloc]initWithObjects:@"Apple", @"Samsung", @"Google", @"Microsoft", @"Intel", nil];
-    
+    self.array = [[NSArray alloc]initWithObjects:@"Apple", @"Almost" @"Samsung", @"Google", @"Microsoft", @"Intel", @"Jaguar", @"Panthers", @"Two", @"Fro", @"Sprint", @"Capital One", nil];
+    self.searchResults = [[NSArray alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +32,12 @@
 #pragma mark - Table View Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.array count];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [self.searchResults count];
+    }
+    else {
+        return [self.array count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -44,8 +49,29 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
-    cell.textLabel.text = [self.array objectAtIndex:indexPath.row];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cell.textLabel.text = [self.searchResults objectAtIndex:indexPath.row];
+    }
+    else {
+        cell.textLabel.text = [self.array objectAtIndex:indexPath.row];
+    }
+    
     return cell;
+}
+
+#pragma mark - Search methods
+
+-(void)filterContentForSearchText:(NSString *)searchText scope:(NSString *)scope {
+ 
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", searchText];
+    self.searchResults = [self.array filteredArrayUsingPredicate:predicate];
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    return YES;
 }
 
 
