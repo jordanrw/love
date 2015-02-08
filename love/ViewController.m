@@ -33,6 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpLocation];
+    
+    //initialize the current song
+    self.currentSong = [[Song alloc]init];
 }
 
 -(BOOL)prefersStatusBarHidden{
@@ -112,16 +115,10 @@
     
     //NSArray *songArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-
     
-    NSLog(@"got data");
-    NSLog(@"%@", dict);
-    self.currentSong.songID = [dict objectForKey:@"SongID"];
-    NSLog(@"songID: %@", self.currentSong.songID);
-    
-    NSArray *ray = @[@"Apple", @"Google", @"Facebook"];
-    NSLog(@"this is an array: %@", ray);
-    
+    //adds information to the currentSong
+    self.currentSong.songId = [[NSString alloc]initWithFormat:@"%@", [dict objectForKey:@"SongId"]];
+    NSLog(@"ID: %@", self.currentSong.songId);
 }
 
 

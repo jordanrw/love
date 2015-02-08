@@ -10,7 +10,7 @@
 
 @interface Song : NSObject
 
-@property (strong, nonatomic) NSString *songID;
+@property (strong, nonatomic) NSString *songId;
 @property int startAt;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *artist;
