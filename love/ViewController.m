@@ -15,13 +15,14 @@
 
 @property (strong, nonatomic) CLLocationManager *manager;
 
-@property (weak, nonatomic) IBOutlet UIImageView *albumCover;
-@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
-@property (weak, nonatomic) IBOutlet UILabel *currentTime;
-@property (weak, nonatomic) IBOutlet UILabel *endTime;
-@property (weak, nonatomic) IBOutlet UILabel *song;
-@property (weak, nonatomic) IBOutlet UILabel *artist;
+@property (strong, nonatomic) IBOutlet UIImageView *albumCover;
+@property (strong, nonatomic) IBOutlet UIProgressView *progressView;
+@property (strong, nonatomic) IBOutlet UILabel *currentTime;
+@property (strong, nonatomic) IBOutlet UILabel *endTime;
+@property (strong, nonatomic) IBOutlet UILabel *song;
+@property (strong, nonatomic) IBOutlet UILabel *artist;
 
+@property (strong, nonatomic) NSString *address;
 
 @end
 
@@ -34,7 +35,11 @@
     [self setUpLocation];
 }
 
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
 
+#pragma mark - Location
 - (void) setUpLocation {
  
     self.manager = [CLLocationManager new];
@@ -43,18 +48,14 @@
     
     //change the desired specifity of the location
     self.manager.desiredAccuracy = kCLLocationAccuracyBest;
-    //self.manager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    
+    //calling method below
+    [self startLocation];
 }
 
-
+//TODO - call this method!
 - (void)startLocation {
     [self.manager startUpdatingLocation];
-}
-
-
-- (IBAction)click:(UIButton *)sender {
-    [self startLocation];
-    
 }
 
 
@@ -67,23 +68,67 @@
     [self.manager stopUpdatingLocation];
     
     CLLocation *newLocation = [locations objectAtIndex:locations.count - 1];
-    NSLog(@"%@", newLocation);
+
+    CLGeocoder *geocoder = [[CLGeocoder alloc]init];
+    //Geocoding Block
     
-    NSString *longitude = [[NSString alloc]initWithFormat:@"%f", newLocation.coordinate.longitude];
-    NSString *latitude = [[NSString alloc] initWithFormat:@"%f", newLocation.coordinate.latitude];
+    [geocoder reverseGeocodeLocation: newLocation completionHandler: ^(NSArray *placemarks, NSError *error) {
+        
+         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+
+         //String to hold address
+        NSString *city = placemark.locality;
+        NSString *state = placemark.administrativeArea;
+        self.address = [[NSString alloc]initWithFormat:@"%@_%@", city, state];
+        
+         //Print the location to console
+        NSLog(@"I am currently at %@",self.address);
+     }];
+    
+    //TODO
+    //call the fetchFeed, not sure if this should be done?
+    NSString *url = [[NSString alloc]initWithFormat:@"http://104.236.79.116:8000/api"];
+    [self fetchFeedWith:url];
+}
+
+#pragma mark - Getting From the Server (JSON)
+- (void)fetchFeedWith:(NSString *)inputURL {
+    
+    __weak ViewController *weakSelf = self;
+    
+    NSURL *URL = [NSURL URLWithString:inputURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    [NSURLConnection sendAsynchronousRequest: request queue: [NSOperationQueue mainQueue] completionHandler:
+     ^(NSURLResponse* response, NSData* data, NSError* connectionError){
+         NSLog(@"data is kinda here");
+         //the same as calling self, but its a safety to make sure self hasn't been set to nil
+         //since this is inside of a 'block'
+         [weakSelf extractData:data];
+     }];
+}
+
+- (void) extractData: (NSData*)data  {
+    
+    //NSArray *songArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
     
-//    [self.longLabel setText:longitude];
-//    [self.latLabel setText:latitude];
+    NSLog(@"got data");
+    NSLog(@"%@", dict);
+    self.currentSong.songID = [dict objectForKey:@"SongID"];
+    NSLog(@"songID: %@", self.currentSong.songID);
+    
+    NSArray *ray = @[@"Apple", @"Google", @"Facebook"];
+    NSLog(@"this is an array: %@", ray);
     
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
-    
-    NSLog(@"hit2");
-    
-}
 
+#pragma mark - Interacting with the music
+
+
+#pragma mark - memory warning
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Song.h"
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
 
+@property (nonatomic, strong) Song *currentSong;
 
 @end
 
