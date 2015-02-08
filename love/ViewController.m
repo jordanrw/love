@@ -11,7 +11,7 @@
 //@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
 
-@interface ViewController ()
+@interface ViewController () <SPTAudioStreamingPlaybackDelegate>
 
 @property (strong, nonatomic) CLLocationManager *manager;
 
@@ -27,6 +27,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *playStop;
 @property BOOL playing;
+
+//specific to audio playing
+@property (strong, nonatomic) SPTSession *session;
+@property (strong, nonatomic) SPTAudioStreamingController *player;
 
 @end
 
@@ -128,6 +132,12 @@
 
 
 #pragma mark - Interacting with the music
+- (void)handleNewSession:(SPTSession *)session {
+    
+
+    
+}
+
 - (IBAction)playStop:(UIButton *)sender {
     
     if (_playing == YES) {
@@ -136,6 +146,7 @@
         UIImage *stop = [UIImage imageNamed:@"play.png"];
         [self.playStop setImage:stop forState:UIControlStateNormal];
         _playing = NO;
+    
     }
     else {
         //start music

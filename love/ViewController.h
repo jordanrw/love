@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Song.h"
+#import <Spotify/Spotify.h> 
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) Song *currentSong;
+
+- (void)handleNewSession:(SPTSession *)session;
 
 @end
 
