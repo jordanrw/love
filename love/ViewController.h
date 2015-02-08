@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <Spotify/Spotify.h>
 #import "Song.h"
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate>
+#define kClientId "e6695c6d22214e0f832006889566df9c"
 
-@property (nonatomic, strong) Song *currentSong;
+@interface ViewController : UIViewController <CLLocationManagerDelegate,SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate>
+
+@property (nonatomic, strong) Song *currentSong; 
+
+-(void)handleNewSession:(SPTSession *)session;
 
 @end
 

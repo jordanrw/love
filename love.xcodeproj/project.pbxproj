@@ -36,6 +36,10 @@
 		3F58E32A1A86EE3100BC6454 /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F58E3291A86EE3100BC6454 /* nav.png */; };
 		727C5FAA1A873E2400B4843A /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727C5FA91A873E2400B4843A /* Spotify.framework */; };
 		727C5FAC1A873E6400B4843A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727C5FAB1A873E6400B4843A /* AVFoundation.framework */; };
+		72F4F6F61A876D9700C594E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F4F6F51A876D9700C594E2 /* CoreGraphics.framework */; };
+		72F4F6F81A876D9E00C594E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F4F6F71A876D9E00C594E2 /* Foundation.framework */; };
+		72F4F6FA1A876DAA00C594E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F4F6F91A876DAA00C594E2 /* UIKit.framework */; };
+		72F4F6FC1A876DB500C594E2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F4F6FB1A876DB500C594E2 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		172E9E591A85FB03005EB42E /* Mob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mob.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		172E9E591A85FB03005EB42E /* Mob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Mob.app; path = love.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		172E9E5D1A85FB03005EB42E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		172E9E5E1A85FB03005EB42E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		172E9E601A85FB04005EB42E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +91,11 @@
 		3F58E3291A86EE3100BC6454 /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav.png; sourceTree = "<group>"; };
 		727C5FA91A873E2400B4843A /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		727C5FAB1A873E6400B4843A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		72F4F6F51A876D9700C594E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		72F4F6F71A876D9E00C594E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		72F4F6F91A876DAA00C594E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		72F4F6FB1A876DB500C594E2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		72F4F6FD1A8773FC00C594E2 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +103,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F4F6FC1A876DB500C594E2 /* Security.framework in Frameworks */,
+				72F4F6FA1A876DAA00C594E2 /* UIKit.framework in Frameworks */,
+				72F4F6F81A876D9E00C594E2 /* Foundation.framework in Frameworks */,
+				72F4F6F61A876D9700C594E2 /* CoreGraphics.framework in Frameworks */,
 				727C5FAC1A873E6400B4843A /* AVFoundation.framework in Frameworks */,
 				727C5FAA1A873E2400B4843A /* Spotify.framework in Frameworks */,
 			);
@@ -133,6 +146,7 @@
 			children = (
 				172E9E601A85FB04005EB42E /* AppDelegate.h */,
 				172E9E611A85FB04005EB42E /* AppDelegate.m */,
+				72F4F6FD1A8773FC00C594E2 /* Config.h */,
 				172E9E631A85FB04005EB42E /* ViewController.h */,
 				172E9E641A85FB04005EB42E /* ViewController.m */,
 				172E9E961A87121A005EB42E /* AddViewController.h */,
@@ -211,6 +225,10 @@
 		727C5FA81A873E0E00B4843A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72F4F6FB1A876DB500C594E2 /* Security.framework */,
+				72F4F6F91A876DAA00C594E2 /* UIKit.framework */,
+				72F4F6F71A876D9E00C594E2 /* Foundation.framework */,
+				72F4F6F51A876D9700C594E2 /* CoreGraphics.framework */,
 				727C5FAB1A873E6400B4843A /* AVFoundation.framework */,
 				727C5FA91A873E2400B4843A /* Spotify.framework */,
 			);

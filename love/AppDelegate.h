@@ -10,6 +10,12 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+
+
+//#define kTokenSwapServiceURL ""
+//#define kTokenRefreshServiceURL ""
+
+
 @property (strong, nonatomic) UIWindow *window;
 
 
