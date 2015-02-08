@@ -12,7 +12,7 @@
 
 static NSString * const kClientId = @"04db443e03cb453f9a19523f59ed6cb3";
 static NSString * const kCallbackURL = @"locationbasedmusic:/callback";
-static NSString * const kTokenSwapServiceURL = @"http://localhost:1234/swap";
+static NSString * const kTokenSwapServiceURL = @"https://salty-basin-8244.herokuapp.com/swap";
 
 @interface AppDelegate ()
 @property (nonatomic, strong) SPTSession *session;
