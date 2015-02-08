@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *song;
 @property (strong, nonatomic) IBOutlet UILabel *artist;
 
+@property (strong, nonatomic) NSString *address;
 
 @end
 
@@ -53,10 +54,12 @@
     
     //change the desired specifity of the location
     self.manager.desiredAccuracy = kCLLocationAccuracyBest;
-    //self.manager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    
+    //calling method below
+    [self startLocation];
 }
 
-
+//TODO - call this method!
 - (void)startLocation {
     [self.manager startUpdatingLocation];
 }
@@ -71,14 +74,21 @@
     [self.manager stopUpdatingLocation];
     
     CLLocation *newLocation = [locations objectAtIndex:locations.count - 1];
-    NSLog(@"%@", newLocation);
-    
-    NSString *longitude = [[NSString alloc]initWithFormat:@"%f", newLocation.coordinate.longitude];
-    NSString *latitude = [[NSString alloc] initWithFormat:@"%f", newLocation.coordinate.latitude];
 
+    CLGeocoder *geocoder = [[CLGeocoder alloc]init];
+    //Geocoding Block
     
-//    [self.longLabel setText:longitude];
-//    [self.latLabel setText:latitude];
+    [geocoder reverseGeocodeLocation: newLocation completionHandler: ^(NSArray *placemarks, NSError *error) {
+        
+         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+
+         //String to hold address
+         NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+        self.address = locatedAt;
+        
+         //Print the location to console
+        NSLog(@"I am currently at %@",self.address);
+     }];
     
 }
 
